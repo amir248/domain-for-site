@@ -104,12 +104,25 @@
     </main>
     <script type="text/javascript">
       let color='black1';
+      document.querySelector('input[type="checkbox"]').addEventListener('click',()=>{
+        if(document.querySelector('input:nth-child(1)').checked){
+          console.log('CHECKED )))');
+          document.querySelector('body').style.cssText="color:white;background:black;";
+          document.querySelectorAll('img')[0].setAttribute('src', 'domain-name-sale-black-468x60-ru.png');
+          document.querySelectorAll('img')[1].setAttribute('src', 'invert.png');
+          document.querySelector('.chatContainer').style.cssText=`color:white;background:black;`;
+        }else{
+          document.querySelector('body').style.cssText="color:black:background:white;";
+          document.querySelectorAll('img')[1].setAttribute('src', 'domain-name-sale-white-200x300-ru.png');
+          document.querySelectorAll('img')[0].setAttribute('src', 'domain-name-sale-white-468x60-ru.png');
+          console.log("no Checked");
+          document.querySelector('.chatContainer').style.cssText=`color:black;background:white;`;
+        }
+        console.log("checked");
+      })
       if(color=='black'){
-        document.querySelector('body').style.cssText="color:white;background:black;";
-        document.querySelectorAll('img')[0].setAttribute('src', 'domain-name-sale-black-468x60-ru.png');
-        document.querySelectorAll('img')[1].setAttribute('src', 'invert.png');
+
       }else{
-        document.querySelector('body').style.cssText="color:black:background:white;";
 
       }
     </script>
