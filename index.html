@@ -142,7 +142,7 @@
         </fieldset>
         <fieldset>
           <legend>Language</legend>
-          <label>Rus <input type="checkbox" name="" value="" id="language" checked> </label>
+          <label> <span id="lg">Rus</span><input type="checkbox" name="" value="" id="language"> </label>
           <!-- <label for="">White <input type="checkbox" name="color" value=""></label> -->
         </fieldset>
       </aside>
@@ -155,7 +155,7 @@
           document.querySelectorAll('img')[0].setAttribute('src', 'domain-name-sale-black-468x60-ru.png');
           document.querySelector('body > main:nth-child(1) > aside:nth-child(2) > a:nth-child(1) > img:nth-child(1)').setAttribute('src', 'invert.png');
           document.querySelector('#three').setAttribute('src', 'domain-name-sale-black-468x60-ru.png');
-
+          document.querySelector('body > main:nth-child(1) > aside:nth-child(2) > fieldset:nth-child(2) > legend:nth-child(1)').innerHTML="O_o";
           // document.querySelector('.chatContainer').style.cssText=`color:white;background:black;`;
           // document.querySelector('body > main:nth-child(1) > aside:nth-child(2) > fieldset:nth-child(2) > label:nth-child(2)').innerHTML='white';
         }else{
@@ -164,6 +164,7 @@
           document.querySelectorAll('img')[0].setAttribute('src', 'domain-name-sale-white-468x60-ru.png');
           console.log("no Checked");
           document.querySelector('#three').setAttribute('src', 'domain-name-sale-white-468x60-ru.png');
+          document.querySelector('body > main:nth-child(1) > aside:nth-child(2) > fieldset:nth-child(2) > legend:nth-child(1)').innerHTML="Black";
 
           // document.querySelector('.chatContainer').style.cssText=`color:black;background:white;`;
         }
@@ -177,6 +178,7 @@
           for(let y=0;y<document.querySelectorAll('#ru').length;y++){
             document.querySelectorAll('#ru')[y].style.cssText=`display:block`;
             document.querySelectorAll('#en')[y].style.cssText=`display:none;`;
+            document.querySelector('#lg').innerHTML='Rus';
             Language=true;
           }
           // document.querySelector('#language').checked=false;
@@ -186,13 +188,15 @@
             document.querySelectorAll('#en')[x].style.cssText=`display:block`;
             document.querySelectorAll('#ru')[x].style.cssText=`display:none;`;
             Language=false;
+            document.querySelector('#lg').innerHTML='En';
           }
         }else{
           if(document.querySelector('#language')==true){
-console.log('else');
+            console.log('else');
           for(let x=0;x<document.querySelectorAll('#en').length;x++){
             document.querySelectorAll('#en')[x].style.cssText=`display:block`;
             document.querySelectorAll('#ru')[x].style.cssText=`display:none`;
+            document.querySelector('#lg').innerHTML='En';
             Language=undefined;
           }
         }
