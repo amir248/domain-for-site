@@ -201,7 +201,51 @@
           }
         }
       }
-      })
+    });
+    if(window.innerWidth>1100){
+      console.log("1100");
+    }else{
+      const div=document.createElement('div');
+      document.querySelector('article').prepend(div);
+      div.style.cssText="background:green;";
+      // div.innerHTML='ok';
+      const fieldset=document.createElement('fieldset');
+      document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1)').prepend(fieldset);
+
+      const legend=document.createElement('legend');
+      document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1) > fieldset:nth-child(1)').prepend(legend);
+      legend.innerHTML="language";
+
+      const input=document.createElement('input');
+      document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1) > fieldset:nth-child(1)').append(input);
+      input.setAttribute('type', 'checkbox');
+
+      const rus =document.createElement('rus');
+      document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1) > fieldset:nth-child(1)').prepend(rus);
+      rus.innerHTML=`Rus `;
+      document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1) > fieldset:nth-child(1) > input:nth-child(3)').addEventListener("click",()=>{
+        if(document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1) > fieldset:nth-child(1) > input:nth-child(3)').checked){
+          console.log("))))");
+          for(let y=0;y<document.querySelectorAll('#ru').length;y++){
+            document.querySelectorAll('#ru')[y].style.cssText=`display:block`;
+            document.querySelectorAll('#en')[y].style.cssText=`display:none;`;
+
+            Language=true;
+          }
+        }else{
+          console.log('O_o');
+          for(let x=0;x<document.querySelectorAll('#en').length;x++){
+            document.querySelectorAll('#en')[x].style.cssText=`display:block`;
+            document.querySelectorAll('#ru')[x].style.cssText=`display:none`;
+  
+            Language=undefined;
+          }
+        }
+      });
+
+      // document.querySelector('.news').style.cssText=`background:green;`;
+
+    }
 
     </script>
   </body>
