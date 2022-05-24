@@ -215,7 +215,7 @@
 
       localStorage.setItem('colorB','black');
       localStorage.removeItem('colorL');
-
+      console.log(document.querySelector('fieldset:nth-child(2) > input[type=checkbox]'));
       // document.querySelector('body > main > aside > fieldset:nth-child(2) > label > input[type=checkbox]').setAttribute("checkbox","checked");
       //
       // document.querySelector('body > main > article > div:nth-child(1) > fieldset:nth-child(2) > input[type=checkbox]').setAttribute("checked","true");
@@ -234,7 +234,6 @@
     }
 
       window.addEventListener('DOMContentLoaded',()=>{
-        console.log("okK");
         if(localStorage.getItem('LangRu')){
           console.log("langel Ru");
           languageRu();
@@ -270,24 +269,19 @@
           bWhite();
           // document.querySelector('.chatContainer').style.cssText=`color:black;background:white;`;
         }
-        console.log("checked");
       });
       let Language;
       document.querySelector('#language').addEventListener('click',()=>{
-        console.log("checked"+Language);
         if(document.querySelector('#language').checked||Language==undefined||Language==false){
-          console.log('true');
           languageRu();
 
 
           // document.querySelector('#language').checked=false;
         }else if(Language==true){
-          console.log('if');
           languageEn();
 
         }else{
           if(document.querySelector('#language')==true){
-            console.log('else');
           for(let x=0;x<document.querySelectorAll('#en').length;x++){
           languageEn();
             Language=undefined;
@@ -329,7 +323,6 @@
             Language=true;
           }
         }else{
-          console.log('O_o');
           for(let x=0;x<document.querySelectorAll('#en').length;x++){
             // document.querySelectorAll('#en')[x].style.cssText=`display:block`;
             // document.querySelectorAll('#ru')[x].style.cssText=`display:none`;
@@ -339,7 +332,6 @@
             Language=undefined;
           }
         }
-        console.log('ok');
       });
       const twoFieldset=document.createElement('fieldset');
       document.querySelector('body > main:nth-child(1) > article:nth-child(1) > div:nth-child(1)').append(twoFieldset);
